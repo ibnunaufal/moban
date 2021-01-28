@@ -36,13 +36,13 @@
               <i class="tim-icons icon-settings-gear-63"></i>
               <p>Admin Page</p>
             </a>
-          </li>
+          </li><!--
           <li id="lognav" class="{{ Request::is('log') ? 'active' : '' }}">
             <a href="./log">
               <i class="tim-icons icon-sound-wave"></i>
               <p>Log History</p>
             </a>
-          </li>
+          </li> -->
           <!-- <i class="tim-icons icon-settings-gear-63"></i> -->
           <li id="feednav" class="{{ Request::is('feedback') ? 'active' : '' }}">
             <a href="./feedback">

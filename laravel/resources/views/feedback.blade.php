@@ -4,6 +4,12 @@
     <div class="content">
         <div class="row">
             <div class="col-12">
+                <div id="alertberhasil" class="alert alert-info" style="display:none;">
+                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                  <span>Berhasil Mengirim Feedback!</span>
+                </div>
             <div class="card card-chart">
                 <div class="card-header ">
                     <div class="row">
@@ -16,6 +22,7 @@
                 <div class="card-header ">
                     <div class="row">
                         <div class="col-sm-10 text-left">
+                            <input type="text" name="nama" class="form-control" id="idbos" placeholder="ID anda" style="display:none;">
                             <!-- <form id="addUser" method="POST" action=""> -->
                                 <div class="form-group">
                                     <label for="InputName">Nama :</label>
@@ -38,55 +45,13 @@
                                     <textarea class="form-control" name="saran" id="saran" rows="4" maxlength="200"></textarea>
                                 </div>
                                 <button id="submitUser" onclick="btnkirim()" type="submit" class="btn btn-sm btn-info btn-simple">Kirim</button>
-                            <!-- </form>      -->
-                            <button onclick="mulaifeedback()" class="btn btn-sm btn-info btn-simple">Kirim</button>
-                        </div>      
+                            </div>
+                        </div>
                     </div>
-                    <div class="row" style="height:10px;"></div>    
-                                <select id="item1" name="Item 1">
-      <option></option>
-      <option value="1">Camera</option>
-      <option value="2">Microphone</option>
-      <option value="3">Tripod</option>
-    </select>
-
-    <button onclick="message()">Go!</button>  
                 </div>
-            </div>
             </div>
         </div>
     </div>
-    <!-- <script>
-        var configfb = {
-            apiKey: "AIzaSyBrPMdssPaCUEl3mHZuHPpJ9UEubeVhK8M",
-            authDomain: "bisa-b2497.firebaseapp.com",
-            databaseURL: "https://bisa-b2497.firebaseio.com/",
-            storageBucket: "bisa-b2497.appspot.com",
-        };
-        if (!firebase.apps.length) {
-            firebase.initializeApp(configfb);
-        }
-        // Add Data
-        $('#submitUser').on('click', function () {
-            var values = $("#addUser").serializeArray();
-            var nama = values[0].value;
-            var email = values[1].value;
-            var jenis = values[2].value;
-            var saran = values[3].value;
-            var saranID = lastIndex + 1;
 
-            console.log(values);
-
-            firebase.database().ref('Saran/' + saranID).set({
-                name: nama,
-                email: email,
-                jenis: jenis,
-                saran: saran,
-            });
-
-            // Reassign lastID value
-            lastIndex = saranID;
-            $("#addUser input").val("");
-        });
-    </script> -->
+   
 @endsection

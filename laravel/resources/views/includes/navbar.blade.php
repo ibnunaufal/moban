@@ -47,7 +47,7 @@
                 <ul class="dropdown-menu dropdown-navbar" id="navbarli">
                   <li class="nav-link">
                   <span data-toggle="modal" id="btnsignin" 
-                  class="nav-item dropdown-item">Sign In</span></li>
+                  class="nav-item dropdown-item">Masuk</span></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>
@@ -76,7 +76,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content bg-dark">
             <div class="modal-header">
-              <h5 class="modal-title text-light" id="exampleModalLabel">Sign In as Admin</h5>
+              <h5 class="modal-title text-light" id="exampleModalLabel">Masuk sebagai Admin</h5>
               <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button> -->
@@ -85,11 +85,11 @@
                 <form id="addUser" method="POST" action="">
                   <div class="form-group text-light">
                       <label for="exampleInputEmail1">Email :</label>
-                      <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan email">
                   </div>
                   <div class="form-group text-light">
                       <label for="InputName">Password :</label>
-                      <input type="password" name="nama" class="form-control" id="password" placeholder="Enter Password">
+                      <input type="password" name="nama" class="form-control" id="password" placeholder="Masukkan Password">
                   </div>
                   <div class="form-group text-light">
                     <input type="checkbox" id="ce" onclick="showpwd()">
@@ -110,8 +110,46 @@
               </form>  
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onclick="myfunc()" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-info" name="signin" onclick="btnlogin()" id="quickstart-sign-in">Sign In!</button>
+              <button type="button" class="btn btn-secondary" onclick="myfunc()" data-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">Lupa Password?</button>
+              <button type="button" class="btn btn-info" name="signin" onclick="btnlogin()" id="quickstart-sign-in">Masuk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal modal2 fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content bg-dark">
+            <div class="modal-header">
+              <h5 class="modal-title text-light" id="exampleModalLabel">Lupa Password</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+            <div class="modal-body">
+                <form id="addUser2" method="POST" action="">
+                  <div class="form-group text-light">
+                      <label for="exampleInputEmail1">Email :</label>
+                      <input type="email" name="emailreset" class="form-control" id="emailreset" placeholder="Masukkan email">
+                  </div>
+              </form>  
+              <div id="alertberhasilkirim" class="alert alert-info" style="display:none;">
+                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="tim-icons icon-simple-remove"></i>
+                </button>
+                <span>Email berhasil dikirim!</span>
+              </div>
+            </div>
+              <script>
+                  function myfunc2(){
+                    document.getElementById("exampleModal2").style.display="none";
+                }
+              </script>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="myfunc2()" data-dismiss="modal">Tutup</button>
+              <button type="button" class="btn btn-info" name="signin" onclick="btnforgot()" id="quickstart-sign-in">Kirim Email Reset</button>
             </div>
           </div>
         </div>

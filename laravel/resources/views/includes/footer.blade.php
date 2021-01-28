@@ -2,6 +2,12 @@
           <ul class="nav">
             <li class="nav-item">
               <a href="./" class="nav-link">
+                  <i class="tim-icons icon-components"></i>
+                  Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./dashboard" class="nav-link">
               <i class="tim-icons icon-chart-pie-36"></i>
                 Dashboard
               </a>
@@ -21,6 +27,6 @@
           </ul>
           
           <div class="copyright">
-            ©Moban v0.1 2020
+            © Moban v1.0 2020
           </div>
         </div>

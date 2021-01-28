@@ -1,6 +1,12 @@
 @extends('layouts.defaults')
 @section('content')
 <div class="content">
+    <div class="alert alert-info">
+              <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+              <span>Selamat Datang di Aplikasi Moban, Silahkan Pilh Menu berikut! Salam.</span>
+            </div>
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card card-chart">
@@ -57,7 +63,7 @@
                     <div class="row">
                         <div class="col text-center">
                             <a href="./about">
-                            <button class="btn btn-info">Lihat Selengkapnya <i class="tim-icons icon-minimal-right"></i></button></a>
+                            <button class="btn btn-info">Lihat Selengkapnya<i class="tim-icons icon-minimal-right"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -117,8 +123,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col text-center">
-                            <a href="#" data-toggle="modal" id="btnsignin" data-target="#exampleModal" >
-                            <button class="btn btn-info">Anda Admin? Masuk disini <i class="tim-icons icon-minimal-right"></i></button></a>
+                            
+                            <button onclick="homeadmin();"class="btn btn-info">Anda Admin? Masuk disini <i class="tim-icons icon-minimal-right"></i></button>
                         </div>
                     </div>
                 </div>

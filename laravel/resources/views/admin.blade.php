@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     alert('Anda mencoba masuk tanpa login. Silahkan Login Dahulu!');
     window.location.replace("./");
     
-    /// Kalau belum login langsung disuruh balek login lagi
+    // Kalau belum login langsung disuruh balek login lagi
   }
 });
 </script>
@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             <div class="col-sm-6 text-left">
                               <h2 class="card-title"><b>Moban Admin Page</b></h2>
                               <h4 class="card-title">
-                                Setting yang digunakan pada Arduino :
+                                Setting yang digunakan pada Sistem :
                               </h4>
                             </div>
                             <div class="col-sm-6">
@@ -73,7 +73,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                       <tbody>
                                         <tr>
                                           <td>
-                                            Tinggi Sensor
+                                            Tinggi Sensor (cm)
                                           </td>
                                           <td>
                                             <!-- <input type="text" id="tinggisp"> -->
@@ -83,31 +83,23 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         </tr>
                                         <tr>
                                           <td>
-                                            Lebar
-                                          </td>
-                                          <td>
-                                            <!-- <span id="lebarsp"></span> -->
-                                            <input type="number" id="lebarinp" disabled class="form-control" min=1 max=100>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            Panjang
+                                            Luas Area (km<sup>2</sup>)
                                           </td>
                                           <td>
                                             <!-- <span id="panjangsp"></span> -->
-                                            <input type="number" id="panjanginp" disabled class="form-control" min=1 max=100>
+                                            <input type="number" id="luasinp" disabled class="form-control" min=1 max=100>
                                           </td>
                                         </tr>
+                                        <!--
                                         <tr>
                                           <td>
                                             Delay
                                           </td>
                                           <td>
-                                            <!-- <span id="delaysp"></span> -->
+                                             <span id="delaysp"></span> 
                                             <input type="number" id="delayinp" disabled class="form-control" min=1 max=100>
                                           </td>
-                                        </tr>
+                                        </tr>-->
                                       </tbody>
                                     </table>
                                     </form>
@@ -131,7 +123,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                       <tbody>
                                         <tr>
                                           <td>
-                                            Status 1
+                                            Status 1 (cm)
                                           </td>
                                           <td>
                                             <!-- <span id="stat1sp"></span> -->
@@ -140,7 +132,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         </tr>
                                         <tr>
                                           <td>
-                                            Status 2
+                                            Status 2 (cm)
                                           </td>
                                           <td>
                                             <!-- <span id="stat2sp"></span> -->
@@ -149,7 +141,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         </tr>
                                         <tr>
                                           <td>
-                                            Status 3
+                                            Status 3 (cm)
                                           </td>
                                           <td>
                                             <!-- <span id="stat3sp"></span> -->
@@ -172,6 +164,134 @@ firebase.auth().onAuthStateChanged(function(user) {
                         </div>                
                     </div>
             </div>
+        <div class="row">
+            <div class="col-12">
+              <div class="card ">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col-sm-6 text-left">
+                        <h4 class="card-title"> Akun Administrator</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-6 text-left">
+                        <h6 class="card-title"> Akun Administrator Anda</h6>
+                        <div class="table-responsive">
+                          <table class="table tablesorter bg-dark" id="sarantable">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  Email
+                                </td>
+                                <td>
+                                  <!-- <span id="stat1sp"></span> -->
+                                  <input type="email" disabled id="emailakun" class="form-control">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Password Lama
+                                </td>
+                                <td>
+                                  <!-- <span id="stat2sp"></span> -->
+                                  <input id="oldpass" disabled type="password" class="form-control" name="password">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Password Baru
+                                </td>
+                                <td>
+                                  <!-- <span id="stat2sp"></span> -->
+                                  <input id="passakun" disabled type="password" class="form-control" name="password">
+                                </td>
+                              </tr>
+                            </table>
+                              <!-- <tbody>
+                                <tr>
+                                  <td>
+                                    Email
+                                  </td>
+                                  <td>
+                                    <input type="email" disabled id="emailakun" class="form-control">
+                                  </td>
+                                </tr>
+
+                                <tr id="rowpass" style="display:block;">
+                                  <td>
+                                    Password
+                                  </td>
+                                  <td>
+                                    <input type="password" disabled id="passakun" class="form-control">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>  -->
+                            <div class="alert alert-info" id="alertpass" style="display:none;">
+                              <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                              </button>
+                              <span>Berhasil Ubah Password</span>
+                            </div>
+                            <button id="btn7" onClick="openadmin()" class="btn btn-sm btn-info btn-simple float-right">Ubah Password</button>
+                            <button id="btn8" onClick="canceladmin()" class="btn btn-sm btn-info btn-simple float-right">Batal</button>
+                            <button id="btn9" onClick="btnadmin()" class="btn btn-sm btn-info btn-simple float-right">Simpan</button>
+                            <script>document.getElementById('btn8').style.display = "none";</script>
+                            <script>document.getElementById('btn9').style.display = "none";</script>
+                          </div>
+                      </div>
+                      <div class="col-sm-6 text-left">
+                        <h6 class="card-title"> Registrasi Administrator Baru </h6>
+                        <div class="table-responsive">
+                            <table class="table tablesorter table-dark" id="settingtable">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    Email
+                                  </td>
+                                  <td>
+                                    <!-- <span id="stat1sp"></span> -->
+                                    <input type="email" disabled id="emailinp" class="form-control">
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    Password
+                                  </td>
+                                  <td>
+                                    <!-- <span id="stat2sp"></span> -->
+                                    <input id="passinp" disabled type="password" class="form-control" name="password"> 
+                                    <!--
+                                    <input type="password" disabled id="passinp" class="form-control">
+                                    <div class="form-group text-light">
+                                    
+                                     <input type="checkbox" id="ce" onclick="showpass(passinp)">
+                                      <label class="form-check-label" for="ce">Show Password</label> 
+                                    </div>-->
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="alert alert-info" id="alertregis" style="display:none;">
+                              <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                              </button>
+                              <span>Berhasil Registrasi Administrator</span>
+                            </div>
+                        <button id="btn4" onClick="openregis()" class="btn btn-sm btn-info btn-simple float-right">Registrasi Admin Baru</button>
+                        <button id="btn5" onClick="cancelregis()" class="btn btn-sm btn-info btn-simple float-right">Batal</button>
+                        <button id="btn6" onClick="btnregis()" class="btn btn-sm btn-info btn-simple float-right">Simpan</button>
+                        <script>document.getElementById('btn5').style.display = "none";</script>
+                        <script>document.getElementById('btn6').style.display = "none";</script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-12">
               <div class="card ">
@@ -179,7 +299,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     <div class="row">
                       <div class="col-sm-6 text-left">
                         <h4 class="card-title"> Kritik Saran</h4>
-                      </div>
+                      </div> <!--
                       <div class="col-sm-6">
                         <div class="input-group">
                           <select class="custom-select" id="inputGroupSelect04">
@@ -192,19 +312,20 @@ firebase.auth().onAuthStateChanged(function(user) {
                             <button class="btn btn-sm btn-info btn-simple float-right" type="button">Button</button>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
                     <table class="table tablesorter " id="sarantable">
                         <thead class=" text-primary">
+                          <th>ID</th>
                           <th>Tanggal</th>
-                          <th>Jam</th>
                           <th>Nama</th>
                           <th>Email</th> 
                           <th>Jenis</th> 
                           <th style="width:30%">Saran</th> 
+                          <th>Aksi</th> 
                         </thead>
                         <tbody id="saranbody">
                         </tbody>
@@ -221,7 +342,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 <div class="card-header">
                   <div class="row">
                     <div class="col-sm-4 text-left">
-                      <h4 class="card-title"> Debit Air Sungai</h4>
+                      <h4 class="card-title"> Debit Air</h4>
                     </div>
                   </div>
                   <div class="row">
@@ -243,8 +364,42 @@ firebase.auth().onAuthStateChanged(function(user) {
                       </tr>
                       <tr>
                         <td></td>
-                        <td><button class="btn btn-sm btn-info btn-simple float-right" onclick="debittampil()" type="button">Tampilkan</button></td>
-                        <td><button class="btn btn-sm btn-info btn-simple float-right" onclick="exportF(4)" type="button">Cetak Data</button></td>
+                        
+                          <td>
+                             <div class="btn-group btn-group-toggle float-center" data-toggle="buttons">
+                              <label class="btn btn-sm btn-info btn-simple active" id="0">
+                                <input type="radio" name="options1" value="menit" checked>
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Real Time</span>
+                                <span class="d-block d-sm-none">
+                                   <i class="tim-icons icon-atom"></i> 
+                                  Real Time
+                                </span>
+                              </label>
+                              <label class="btn btn-sm btn-info btn-simple" id="1">
+                                <input type="radio" class="d-none d-sm-none" value="jam" name="options1">
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Jam</span>
+                                <span class="d-block d-sm-none">
+                                  <i class="tim-icons icon-atom"></i> 
+                                  Jam
+                                </span>
+                              </label>
+                              <label class="btn btn-sm btn-info btn-simple" id="1">
+                                <input type="radio" class="d-none d-sm-none"  value="harian" name="options1">
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Harian</span>
+                                <span class="d-block d-sm-none">
+                                  <i class="tim-icons icon-atom"></i> 
+                                  Harian
+                                </span>
+                              </label>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-sm btn-info btn-simple float-right" onclick="exportF(6)" type="button">Cetak Data</button>
+                            <button class="btn btn-sm btn-info btn-simple float-right" onclick="debittampil()" type="button">Tampilkan</button>
+                        </td>
                       </tr>
                       </div>
                     </table>
@@ -262,8 +417,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                           <th>Nomor</th>
                           <th>Tanggal</th>
                           <th>Jam</th>
-                          <th>Ketinggian</th>
-                          <th>Debit</th> 
+                          <th>Ketinggian(m)</th>
+                          <th>Debit(m<sup>3</sup>/s</th> 
                         </tr>
                         
                       </thead>
@@ -296,8 +451,48 @@ firebase.auth().onAuthStateChanged(function(user) {
                         <td>Sampai: </td>
                         <td>
                           <input id="endhujan" class="form-control" max=<?php echo date('Y-m-d'); ?> value=<?php echo date('Y-m-d'); ?> type="date">
-                          </td>
-                        <td><button class="btn btn-sm btn-info btn-simple float-right" onclick="hujantampil()" type="button">Tampilkan</button></td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        
+                          <td>
+                             <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                              <label class="btn btn-sm btn-info btn-simple active" id="0">
+                                <input type="radio" name="options" value="menit" checked>
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Real Time</span>
+                                <span class="d-block d-sm-none">
+                                   <i class="tim-icons icon-atom"></i> 
+                                  Real Time
+                                </span>
+                              </label>
+                              <label class="btn btn-sm btn-info btn-simple" id="1">
+                                <input type="radio" class="d-none d-sm-none" value="jam" name="options">
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Jam</span>
+                                <span class="d-block d-sm-none">
+                                  <i class="tim-icons icon-atom"></i> 
+                                  Jam
+                                </span>
+                              </label>
+                              <label class="btn btn-sm btn-info btn-simple" id="1">
+                                <input type="radio" class="d-none d-sm-none"  value="harian" name="options">
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Harian</span>
+                                <span class="d-block d-sm-none">
+                                  <i class="tim-icons icon-atom"></i> 
+                                  Harian
+                                </span>
+                              </label>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        
+                        <td>
+                            
+                            <button class="btn btn-sm btn-info btn-simple float-right" onclick="exportF(8)" type="button">Cetak Data</button>
+                            <button class="btn btn-sm btn-info btn-simple float-right" onclick="hujantampil()" type="button">Tampilkan</button>
+                        </td>
                       </tr>
                       </div>
                     </table>
@@ -330,7 +525,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                         <th>Nomor</th>
                         <th>Tanggal</th>
                         <th>Jam</th>
-                        <th>Data Hujan</th>
+                        <th>Curah Hujan (mm)</th>
+                        <th>Intensitas Hujan (mm/h)</th>
                       </tr>
                       </thead>
                       <tbody id="tbody2">

@@ -163,51 +163,12 @@
                     </div>
                 </div>
 
-                <div class="card card-chart">
-                    <div class="card-header ">
-                        <div class="row">
-                            <div class="col-sm-6 text-left">
-                            <h2 class="card-title"><b>Cara Kerja Alat</b></h2>
-                            </div>
-                        </div>                
-                    </div>
-                    <div class="card-header ">
-                        <div class="row">
-                            <div class="col-sm-6 text-left">
-                                <h4 class="card-title">
-                                    <p>Proses simulasi penghitungan adalah seperti gambar disamping. </p><br>
-                                    <p>
-                                        Box diibaratkan sebagai pintu air 
-                                        pada sungai. Kran keluaran menjadi pintu air yang dapat diatur besar kecilnya aliran yang keluar.
-                                        Kemudian air dari shower/sprayer diibaratkan turunnya hujan. Hujan yang diatur curah hujannya dapat diatur
-                                        melalui kran pengatur pada bagian atas.
-                                    </p> <br>
-                                    <p>
-                                        Air dipompa untuk dapat naik melalui pipa, kemudian keluar melalui sprayer. 
-                                        Air yang keluar dari sprayer diibaratkan proses terjadinya hujan yang mana akan dibaca oleh Rain Gauge Sensor. Kemudian Tinggi air dihitung
-                                        menggunakan Ultrasonic sensor, dari tinggi ini kemudian diolah untuk didapatkan nilai debit air yang
-                                        berada pada box.
-                                    </p>
-                                    <br>
-                                    <p>
-                                        
-                                    </p>
-                                </h4>
-                            </div>      
-                            <div class="col-sm-6 text-center">
-                                <img id="myImg" src="{{ URL::asset('img/moban2.gif') }}" alt="Cara Kerja Alat"><br>
-                                Klik untuk lihat lebih jelas<br><br>
-                            </div>
-                        </div>                
-                    </div>
-                </div>
-                
 
                 <div class="card card-chart">
                     <div class="card-header ">
                         <div class="row">
                             <div class="col-sm-6 text-left">
-                            <h2 class="card-title"><b>Team</b></h2>
+                            <h2 class="card-title"><b>Created By</b></h2>
                             </div>
                         </div>                
                     </div>
@@ -216,8 +177,10 @@
                             <div class="col-sm-8 text-left">
                                 <h4 class="card-title">
                                     <p>
-                                        Sistem ini dibuat dalam rangka menyelesaikan Tugas Akhir Program Studi Teknik Informatika
-                                        Jurusan Teknik Elektro Politeknik Negeri Semarang.
+                                        Moban Team
+                                    </p>
+                                    <p>
+                                        Politeknik Negeri Semarang
                                     </p>
                                     <br>
                                     <p>
